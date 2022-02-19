@@ -6,9 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>5c935748-7b99-44a5-8e04-19b55cac35d7</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <ApplicationInsightsResourceId>/subscriptions/3f9621d4-9e37-4a08-9ba9-f6b1a298c1a4/resourceGroups/prolink/providers/microsoft.insights/components/prolink</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
   </ItemGroup>
 
