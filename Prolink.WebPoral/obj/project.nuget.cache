@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "aqs4orKYUm3vkg96khEv74jFNHLPDfMIepfGmVMFG8cp1bT0Q55mAvWWe6boVbRrytHrMKJ5i9TsIIy8boZoDg==",
+  "success": true,
+  "projectFilePath": "D:\\Work\\ProLink.Web-Git\\ProLink\\Prolink.WebPoral\\Prolink.WebPoral.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\iibrahim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512"
+  ],
+  "logs": []
+}
