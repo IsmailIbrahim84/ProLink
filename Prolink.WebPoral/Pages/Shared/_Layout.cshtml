@@ -1,51 +1,1753 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+<!doctype html>
+<html class="no-js" lang="en-US">
+<!--
+HTML tag with Open Graph attributes should looks like this
+<html class="no-js" lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+-->
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Prolink.WebPoral</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Prolink.WebPoral.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Prolink.WebPoral</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<meta charset="UTF-8" />
+	<title>ProLink</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	@*@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")*@
+	<!-- Open Graph meta tags for social websites -->
+	<!--
+	<meta property="og:title" content="ProLink - Advanced Technology Solutions">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="http://www.mysite.com/article/">
+	<meta property="og:image" content="http://www.mysite.com/articleimage.jpg">
+	<meta property="og:site_name" content="ProLink">
+	<meta property="fb:app_id" content="">
+	<meta property="og:description" content="ProLink are innovators, designers and developers of cutting edge communication technology across wide applications spectrum in both system integration and communication.
+											 Today, our expertise in data communication system integration based applications, has enabled 
+											 ProLink to work closely with leading manufacturers and developers in these fields to add value to a wide range of hardware and software products. 
+											 ProLink is enabling customers to create Competitive advantage by transforming the business of networking through securing networks against increasingly frequent and sophisticated attacks, and providing secure access to remote recourses for customers.
+">
+	-->
+	<!-- CSS Animation libs styles -->
+	<link rel="stylesheet" href="~/css/libs/animate.min.css" type="text/css" media="all">
+	<!-- Font Awesome icon library -->
+	<link href="~/css/libs/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+	<!-- Load primary stylesheet -->
+	<link rel="stylesheet" href="~/css/skin.css" type="text/css" media="all">
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Prolink.WebPoral - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+	<link rel="icon" type="image/png" href="~/images/server-to-cloud.png" />
+	<!--[if IE]>
+		<link rel="shortcut icon" href="http://www.mydomain.com/content/favicon.ico" type="image/vnd.microsoft.icon" />
+	<![endif]-->
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+		<script type='text/javascript'>
+		var appInsights = window.appInsights || function (config) {
+			function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+			var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
+		}({
+			instrumentationKey: 'c8bbb5e8-f951-4f00-a8a8-9c0a8be5a398'
+		});
 
-    @await RenderSectionAsync("Scripts", required: false)
+		window.appInsights = appInsights;
+		appInsights.trackPageView();
+		</script>
+		@Html.Partial("_GoogleAnalytics")
+	</head>
+	@*<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>*@
+	<body class="home home-agency one-page preloader transparent-header parallax-footer">
+
+
+	@RenderBody()
+
+	@*<div class="container body-content">
+
+
+		<hr />*@
+	<!--
+		Page preloader
+	-->
+	<div id="preloader">
+			<div class="timer"></div>
+		</div>
+
+	<!--
+		Main wrapper
+	-->
+	<div id="wrap">
+
+		<!--
+			Page header
+		-->
+		<header class="headroom" id="header">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<!--
+							Theme logo
+						-->
+						<a href="index-agency.html" class="logo"><img src="~/images/low 72-06.png" data-at2x="images/low 72-05.png" alt="ProLinkLogo" /></a>
+
+						<!--
+							Navigation
+						-->
+						<nav id="header-nav" class="dl-menuwrapper" data-back-label="Back">
+
+							<!--
+								Toggle menu for mobile devices
+								this element is hidden for desktop and large monitors
+							-->
+							<a href="javascript:;" id="mobile-menu-toggler" class="dl-trigger"><span>Toggle Menu</span></a>
+
+							<ul id="header-menu" class="dl-menu">
+								<!--
+									First level menu
+								-->
+								<li>
+									<a href="#slider">
+										<!-- Animated line wrap additional tags -->
+										<span class="line_wrap">
+											<span class="line"></span>
+											Home
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#agency">
+										<span class="line_wrap">
+											<span class="line"></span>
+											Overview
+										</span>
+									</a>
+								</li>
+								@* <li> *@
+								@* 	<a href="#process"> *@
+								@* 		<span class="line_wrap"> *@
+								@* 			<span class="line"></span> *@
+								@* 			Process *@
+								@* 		</span> *@
+								@* 	</a> *@
+								@* </li> *@
+								<li>
+									<a href="#services">
+										<span class="line_wrap">
+											<span class="line"></span>
+											Services
+										</span>
+									</a>
+								</li>
+								@* <li> *@
+								@* 	<a href="#works"> *@
+								@* 		<span class="line_wrap"> *@
+								@* 			<span class="line"></span> *@
+								@* 			Works *@
+								@* 		</span> *@
+								@* 	</a> *@
+								@* </li> *@
+								@* <li> *@
+								@* 	<a href="#team"> *@
+								@* 		<span class="line_wrap"> *@
+								@* 			<span class="line"></span> *@
+								@* 			Team *@
+								@* 		</span> *@
+								@* 	</a> *@
+								@* </li> *@
+								@* <li> *@
+								@* 	<a href="#news"> *@
+								@* 		<span class="line_wrap"> *@
+								@* 			<span class="line"></span> *@
+								@* 			News *@
+								@* 		</span> *@
+								@* 	</a> *@
+								@* </li> *@
+								<li>
+									<a href="#clients">
+										<span class="line_wrap">
+											<span class="line"></span>
+											Clients
+										</span>
+									</a>
+								</li>
+								@* <li> *@
+								@* 	<a href="#pricing"> *@
+								@* 		<span class="line_wrap"> *@
+								@* 			<span class="line"></span> *@
+								@* 			Pricing *@
+								@* 		</span> *@
+								@* 	</a> *@
+								@* </li> *@
+								<li>
+									<a href="#contact">
+										<span class="line_wrap">
+											<span class="line"></span>
+											Contact <i class="submenu-icon"></i>
+										</span>
+									</a>
+
+									<!--
+										An example of second menu level
+									-->
+									<ul class="sub-menu dl-submenu">
+										<li><a class="external" href="blog-single.html">Blog Post</a></li>
+										<li><a class="external" href="header-scroll.html">Scroll Header</a></li>
+										<li><a class="external" href="header-simple.html">Simple Header</a></li>
+										<li><a class="external" href="footer-simple.html">Simple Footer</a></li>
+										<li><a class="external" href="sidebar-left.html">Left Side</a></li>
+										<li><a class="external" href="page.html">Page</a></li>
+										<li>
+											<a class="external" href="javascript:;">Right menu <i class="submenu-icon"></i></a>
+
+											<!--
+												An example of third menu level
+												it will appear on a right side
+											-->
+											<ul class="sub-menu dl-submenu appear-on-right">
+												<li><a class="external" href="javascript:;">Link 1</a></li>
+												<li><a class="external" href="javascript:;">Link 2</a></li>
+												<li><a class="external" href="javascript:;">Link 3</a></li>
+											</ul>
+
+										</li>
+										<li>
+											<a class="external" href="javascript:;">Left menu <i class="submenu-icon"></i></a>
+
+											<!--
+												An example of third menu level
+												it will appear on a left side
+											-->
+											<ul class="sub-menu dl-submenu appear-on-left">
+												<li><a class="external" href="javascript:;">Some link 1</a></li>
+												<li><a class="external" href="javascript:;">Some link 2</a></li>
+												<li><a class="external" href="javascript:;">Some link 3</a></li>
+											</ul>
+
+										</li>
+									</ul>
+
+								</li>
+							</ul>
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+		</header>
+
+		<!--
+			Content section area
+		-->
+		<div id="content-wrapper">
+
+			<!--
+				Home page slider
+			-->
+			<div id="slider" class="section slider">
+				<!--
+					Slides
+				-->
+				<ul class="seq-canvas">
+					<li style="background-image: url(/images/demo-images/home_1_slider_1.png)">
+
+						<!-- slide layers -->
+						<div class="layer">
+							<h1>Infrastructure<br />Application Solutions</h1>
+							<p>Your business deserves customized solutions that are able to maximize profits. We address your needs, with ProLink guidance, our clients are steered through the steps of the process, whether it is the entire project or a series of business enablers, equipping you with infrastructure, applications and services that enhance your ICT environment.</p>
+							@*<a href="blog.html" class="button yellow">About Us</a>*@
+						</div>
+
+					</li>
+					<li style="background-image: url(/images/demo-images/home_1_slider_2.png);">
+
+						<!-- slide layers -->
+						<div class="layer">
+							<h1>Professional<br />Support</h1>
+							<p>ProLink range of support services is able to optimize our client’s ICT environment by providing 24-hour cover, permanent on-site staff, on-call staff and remote support with the expertise you require against a defined Service Level Agreement (SLA)..</p>
+							@* <a href="blog.html" class="button blue">Our Blog</a> *@
+						</div>
+
+					</li>
+					<li style="background-image: url(/images/demo-images/home_1_slider_3.png)">
+
+						<!-- slide layers -->
+						<div class="layer">
+							<h1>Strategic<br />Consulting</h1>
+							<p>We supply architecture and design services for all advanced infrastructure solutions, virtualization, storage solutions, core network infrastructure, back-up and disaster recovery, compliance and outsourcing needs. So, whether it’s time to review your IT strategy, evaluate new technology, design architecture, manage the deployment of new technology or understand IT best practice, we offer independent, vendor-free advice to make it happen.</p>
+							@* <a href="blog.html" class="button purple">About Us</a> *@
+						</div>
+
+					</li>
+					@* <li style="background-image: url(~/images/demo-images/home_1_slider_4.png)"> *@
+					@* *@
+					@* 	<!-- slide layers --> *@
+					@* 	<div class="layer"> *@
+					@* 		<h1>Creative<br />Digital Agency</h1> *@
+					@* 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p> *@
+					@* 		<a href="blog.html" class="button green">Our Blog</a> *@
+					@* 	</div> *@
+					@* *@
+					@* </li> *@
+					@* <li style="background-image: url(~/images/demo-images/home_1_slider_5.png)"> *@
+					@* *@
+					@* 	<!-- slide layers --> *@
+					@* 	<div class="layer"> *@
+					@* 		<h1>Creative<br />Digital Agency</h1> *@
+					@* 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p> *@
+					@* 		<a href="blog.html" class="button pink">About Us</a> *@
+					@* 	</div> *@
+					@* *@
+					@* </li> *@
+				</ul>
+				<!--
+					Pagination
+				-->
+				<ul class="seq-pagination">
+					<li class="seq-current"></li>
+					<li></li>
+					<li></li>
+					@* <li></li> *@
+					@* <li></li> *@
+				</ul>
+				<!--
+					Skip slider
+				-->
+				<a href="javascript:;" class="skip-slider"></a>
+			</div>
+
+			<!--
+				About our agency section
+			-->
+			<div class="section" id="agency">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9">
+							<h2 class="h1 wow zoomInDown" data-wow-delay="0.1s">An Overview</h2>
+							<br/>
+							<p style="alignment: center;align-content: center;color: #2a6496;font-size: large;font-weight: bold">Originally Established in Egypt, ProLink happens to be a pioneer in system integration and advanced technology solutions, voice & data communication applications and one of the strong Egyptian companies entering the IT business. </p>
+							<p style="alignment: center;align-content: center;color: #2a6496;font-size: large;font-weight: bold">ProLink are innovators, designers and developers of cutting edge communication technology across wide applications spectrum in both system integration and communication.
+							   Today, our expertise in data communication system integration based applications, has enabled 
+							   ProLink to work closely with leading manufacturers and developers in these fields to add value to a wide range of hardware and software products. </p>
+							<p style="alignment: center;align-content: center;color: #2a6496;font-size: large;font-weight: bold">ProLink is enabling customers to create Competitive advantage by transforming the business of networking through securing networks against increasingly frequent and sophisticated attacks, and providing secure access to remote recourses for customers</p>
+							@* <a href="javascript:;" class="button blue">Meet Our Team</a> *@
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!--
+				Our process video section
+			-->
+			@*<div class="section" id="process">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<h1>Watch this Video About Our <strong>Work Process</strong></h1>
+							<a href="https://www.youtube.com/watch?v=ePLajxLpUNk" class="button-video-play lightbox wow wobble" data-wow-delay="0.2s"></a>
+							<div class="video-description">Unicum Creative Digital Agency<br />03:26</div>
+						</div>
+					</div>
+				</div>
+
+			</div>*@
+
+			<!--
+				Services section
+			-->
+			<div class="section" id="services">
+
+				<div class="services">
+
+					<!--
+						Tab element
+					-->
+					<div id="services-tab-id-1" class="service-item selected">
+
+						<!--
+							Tab content
+						-->
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-6">
+
+									<div class="tab-content">
+
+										<h2 class="h1 wow zoomInDown">Professional Services</h2>
+
+										@*<h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</h6>*@
+
+										<p>You have a business to run. Your IT department has its hands full. ProLink understands. Our Professional Services Group is available to help you do more. As a leader in advanced networking and security, ProLink engineers can help you design, implement and optimize solutions that make a difference in your bottom line.
+											Implementing new solutions is hard. Ensuring they work without compromise is harder still. Sometimes, doing it with existing staff is too much to ask. Not keeping pace is never the answer.
+											ProLink Professional Services Group can help you do what needs to be done. We can even help you figure out what that is - by working with you, listening to you, and taking nothing for granted.
+											Our engineers are available for short or long-term service contracts designed to help you do what you need to do.
+										</p>
+
+										<a href="javascript:;" class="button orange inverted wow wobble" data-wow-delay="0.5s">Request a call</a>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div id="services-tab-id-2" class="service-item">
+
+						<!--
+							Tab content
+						-->
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-6">
+
+									<div class="tab-content">
+
+										<h2 class="h1">Managed Services</h2>
+
+										@*<h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</h6>*@
+
+										<p>High-performance secure network infrastructure is the backbone of any modern enterprise. ProLink understands secure high-speed networking and can put that knowledge to work in your organization.
+											Our Managed Services can manage your network from low to high-end routing, switching and wireless to full security on a 24x7x365 basis anywhere in Egypt.
+											Our engineers handle 1st, 2nd and 3rd level support through a proven escalation process. Our engineers own any problem until it’s closed or clearly transitioned. 
+											We keep up to date with the latest hardware, software and design practices in order to always provide you with exactly what you need.
+										</p>
+
+										<a href="javascript:;" class="button orange inverted">Request a call</a>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div id="services-tab-id-3" class="service-item">
+
+						<!--
+							Tab content
+						-->
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-6">
+
+									<div class="tab-content">
+
+										<h2 class="h1">Advanced Networking</h2>
+
+										@*<h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</h6>*@
+
+										<p>If you view high performance and extreme reliability as necessities, then Advanced Networking solutions from ProLink speaks your language. From single campus Ethernet to service provider IP/MPLS backbones, and from enterprise datacenters to cloud providers and high-performance IP fabrics, ProLink has a solution to fit your needs and expand your capabilities</p>
+
+										<a href="javascript:;" class="button orange inverted">Request a call</a>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div id="services-tab-id-4" class="service-item">
+
+						<!--
+							Tab content
+						-->
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-6">
+
+									<div class="tab-content">
+
+										<h2 class="h1">Cloud Platform</h2>
+
+										@*<h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</h6>*@
+
+										<p>
+											The cloud is a beautiful place when you know your way around. ProLink uses Network Function Virtualization (NFV) technologies to help our clients deliver new services faster on a simpler, more automated cloud infrastructure.
+											Network boundaries are a thing of the past. Organizations employ cloud based services both on-premises and in public clouds. Take control of your environment and ensure fast, secure and reliable access to your data. Our team of engineers can help architect cloud-interconnect solutions to provide better access and reliability to your data stored off-premises.
+										</p>
+
+										<a href="javascript:;" class="button orange inverted">Request a call</a>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<!--
+					Tabs pagination
+				-->
+				<div class="services-pagination">
+
+					<a href="#services-tab-id-1" class="tab-link services-link-id-1 selected">
+						<i class="icon"></i>
+						<span>Professional Services</span>
+					</a>
+
+					<a href="#services-tab-id-2" class="tab-link services-link-id-2">
+						<i class="icon"></i>
+						<span>Managed Services</span>
+					</a>
+
+					<a href="#services-tab-id-3" class="tab-link services-link-id-3">
+						<i class="icon"></i>
+						<span>Advanced Networking</span>
+</a>
+
+					<a href="#services-tab-id-4" class="tab-link services-link-id-4">
+						<i class="icon"></i>
+						<span>Cloud Platform</span>
+					</a>
+
+				</div>
+
+			</div>
+
+			<!--
+				Portfolio
+			-->
+			@* <div class="section" id="works"> *@
+			@* *@
+			@* 	<div class="portfolio"> *@
+			@* *@
+			@* 		<div class="portfolio-header style-left"> *@
+			@* *@
+			@* 			<div class="container"> *@
+			@* 				<div class="row"> *@
+			@* 					<div class="col-md-12"> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Section header *@
+			@* 						--> *@
+			@* 						<h2 class="h1 wow zoomInDown">Latest Works</h2> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Portfolio filters *@
+			@* 						--> *@
+			@* 						<div class="filters"> *@
+			@* 							<a href="javascript:;" data-filter=".item" class="selected"> *@
+			@* 								<span class="line_wrap"> *@
+			@* 									<span class="line"></span> *@
+			@* 									All categories *@
+			@* 								</span> *@
+			@* 							</a> *@
+			@* 							<a href="javascript:;" data-filter=".filter-graphic"> *@
+			@* 								<span class="line_wrap"> *@
+			@* 									<span class="line"></span> *@
+			@* 									Graphic Design *@
+			@* 								</span> *@
+			@* 							</a> *@
+			@* 							<a href="javascript:;" data-filter=".filter-web-design"> *@
+			@* 								<span class="line_wrap"> *@
+			@* 									<span class="line"></span> *@
+			@* 									Web Design *@
+			@* 								</span> *@
+			@* 							</a> *@
+			@* 							<a href="javascript:;" data-filter=".filter-apps"> *@
+			@* 								<span class="line_wrap"> *@
+			@* 									<span class="line"></span> *@
+			@* 									Apps *@
+			@* 								</span> *@
+			@* 							</a> *@
+			@* 							<a href="javascript:;" data-filter=".filter-development"> *@
+			@* 								<span class="line_wrap"> *@
+			@* 									<span class="line"></span> *@
+			@* 									Development *@
+			@* 								</span> *@
+			@* 							</a> *@
+			@* 						</div> *@
+			@* *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 		</div> *@
+			@* *@
+			@* 		<!-- *@
+			@* 			Portfolio justified gallery *@
+			@* 		--> *@
+			@* 		<div class="portfolio-gallery"> *@
+			@* *@
+			@* 			<div class="item filter-graphic filter-web-design"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					Thumbnail *@
+			@* 				--> *@
+			@* 				<img src="~/images/demo-images/work_1.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<!-- *@
+			@* 						Work title *@
+			@* 					--> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<!-- *@
+			@* 						Zoom link *@
+			@* 					--> *@
+			@* 					<a href="~/images/demo-images/work_1.jpg" class="zoom lightbox"></a> *@
+			@* 					<!-- *@
+			@* 						Tags *@
+			@* 					--> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-web-design"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_2.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_2.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-apps"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_3.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_3.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-development filter-apps"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_4.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_4.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-web-design"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_5.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_5.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-graphic"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_6.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_6.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-development filter-apps"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_10.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_10.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-web-design"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_12.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_12.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 			<div class="item filter-graphic"> *@
+			@* *@
+			@* 				<img src="~/images/demo-images/work_13.jpg" alt="" /> *@
+			@* 				<div class="caption"> *@
+			@* 					<h4>A4 Paper PSD MockUp</h4> *@
+			@* 					<a href="~/images/demo-images/work_13.jpg" class="zoom lightbox"></a> *@
+			@* 					<div class="tags"> *@
+			@* 						<a href="blog.html">Graphic design</a> *@
+			@* 					</div> *@
+			@* 				</div> *@
+			@* 			</div> *@
+			@* *@
+			@* 		</div> *@
+			@* *@
+			@* 		<div class="portfolio-pagination"> *@
+			@* 			<a href="javascript:;" class="portfolio-load-more"><i class="icon"></i> <span>Load More Works</span></a> *@
+			@* 		</div> *@
+			@* *@
+			@* 	</div> *@
+			@* *@
+			@* </div> *@
+
+			<!--
+				Our team
+			-->
+			<!--<div class="section" id="team">-->
+
+				<!--
+					Photos and content
+				-->
+				<!--<div class="items">
+
+					<div class="item" data-bg="~/images/demo-images/team_bg_1.jpg">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6 wow fadeInDown">-->
+
+									<!--
+										Position title
+									-->
+									<!--<div class="position">Programmer</div>-->
+
+									<!--
+										Team mamber name
+									-->
+									<!--<h2 class="h1">John Doe</h2>-->
+
+									<!--
+										Description
+									-->
+									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+
+									<div class="links">-->
+										<!--
+											Send message button
+										-->
+										<!--<a href="javascript:;" class="button green">Send Message</a>-->
+
+										<!--
+											Social icons
+										-->
+										<!--<div class="social-icons">
+											<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+											<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+											<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+											<a href="http://pinterest.com" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="item" data-bg="~/images/demo-images/team_bg_2.jpg">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">-->
+
+									<!--
+										Position title
+									-->
+									<!--<div class="position">Graphic Designer</div>-->
+
+									<!--
+										Team mamber name
+									-->
+									<!--<h2 class="h1">Britney Doe</h2>-->
+
+									<!--
+										Description
+									-->
+									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+
+									<div class="links">-->
+										<!--
+											Send message button
+										-->
+										<!--<a href="javascript:;" class="button green">Send Message</a>-->
+
+										<!--
+											Social icons
+										-->
+										<!--<div class="social-icons">
+											<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+											<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+											<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+											<a href="http://pinterest.com" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="item" data-bg="~/images/demo-images/team_bg_3.jpg">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">-->
+
+									<!--
+										Position title
+									-->
+									<!--<div class="position">CEO</div>-->
+
+									<!--
+										Team mamber name
+									-->
+									<!--<h2 class="h1">Homer Simpson</h2>-->
+
+									<!--
+										Description
+									-->
+									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+
+									<div class="links">-->
+										<!--
+											Send message button
+										-->
+										<!--<a href="javascript:;" class="button green">Send Message</a>-->
+
+										<!--
+											Social icons
+										-->
+										<!--<div class="social-icons">
+											<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+											<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+											<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+											<a href="http://pinterest.com" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="item" data-bg="~/images/demo-images/team_bg_4.jpg">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">-->
+
+									<!--
+										Position title
+									-->
+									<!--<div class="position">Manager</div>-->
+
+									<!--
+										Team mamber name
+									-->
+									<!--<h2 class="h1">Lisa Simpson</h2>-->
+
+									<!--
+										Description
+									-->
+									<!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+
+									<div class="links">-->
+										<!--
+											Send message button
+										-->
+										<!--<a href="javascript:;" class="button green">Send Message</a>-->
+
+										<!--
+											Social icons
+										-->
+										<!--<div class="social-icons">
+											<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+											<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+											<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+											<a href="http://pinterest.com" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">-->
+
+							<!--
+								Pagination
+							-->
+							<!--<div class="team-pagination">
+								<a href="javascript:;" class="current">
+									<span class="overlay"></span>
+									<img src="~/images/demo-images/team_1.jpg" data-at2x="images/demo-images/team_1@2x.jpg" width="170" alt="" />
+								</a>
+
+								<a href="javascript:;">
+									<span class="overlay"></span>
+									<img src="~/images/demo-images/team_2.jpg" data-at2x="images/demo-images/team_2@2x.jpg" width="170" alt="" />
+								</a>
+
+								<a href="javascript:;">
+									<span class="overlay"></span>
+									<img src="~/images/demo-images/team_3.jpg" data-at2x="images/demo-images/team_3@2x.jpg" width="170" alt="" />
+								</a>
+
+								<a href="javascript:;">
+									<span class="overlay"></span>
+									<img src="~/images/demo-images/team_4.jpg" data-at2x="images/demo-images/team_4@2x.jpg" width="170" alt="" />
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>-->
+
+			<!--
+				News carousel
+			-->
+			@* <div class="section" id="news"> *@
+			@* *@
+			@* 	<div class="container"> *@
+			@* 		<div class="row"> *@
+			@* 			<div class="col-md-8 col-md-offset-2"> *@
+			@* *@
+			@* 				<h2 class="h1 wow zoomInDown">Our Recent News</h2> *@
+			@* *@
+			@* 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p> *@
+			@* *@
+			@* 			</div> *@
+			@* 		</div> *@
+			@* 	</div> *@
+			@* *@
+			@* 	<!-- News Slider main container --> *@
+			@* 	<div class="news-carousel swiper-container"> *@
+			@* 		<!-- Additional required wrapper --> *@
+			@* 		<div class="swiper-wrapper"> *@
+			@* 			<!-- Slides --> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_1@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_1@2x.jpg" data-at2x="images/demo-images/news_1@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Nam liber tempor cum soluta nobis eleifend option</a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> August 26, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_2@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_2.jpg" data-at2x="images/demo-images/news_2@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Lorem ipsum dolor sit amet, consectetuer adipiscing </a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> August 27, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_3@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_3.jpg" data-at2x="images/demo-images/news_3@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Lorem ipsum dolor sit amet, consectetuer adipiscing </a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> August 28, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_4@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_4.jpg" data-at2x="images/demo-images/news_4@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Claritas processus dynamicus, qui sequitur</a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> August 29, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_5@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_5.jpg" data-at2x="images/demo-images/news_5@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Nam liber tempor cum soluta nobis eleifend option</a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> August 29, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_6@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_6.jpg" data-at2x="images/demo-images/news_6@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Lorem ipsum dolor sit amet, consectetuer adipiscing </a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> August 30, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_7@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_7.jpg" data-at2x="images/demo-images/news_7@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Nam liber tempor cum soluta nobis eleifend option</a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> September 2, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 			<div class="swiper-slide"> *@
+			@* *@
+			@* 				<!-- *@
+			@* 					News slide *@
+			@* 				--> *@
+			@* 				<div class="news-item"> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post thumbnail *@
+			@* 					--> *@
+			@* 					<div class="thumbnail"> *@
+			@* 						<!-- hover overlay --> *@
+			@* 						<div class="overlay"></div> *@
+			@* 						<!-- hover links --> *@
+			@* 						<a class="lightbox zoom" href="~/images/demo-images/news_8@2x.jpg"></a> *@
+			@* 						<a class="permalink" href="blog.html"></a> *@
+			@* 						<!-- post thumbnail --> *@
+			@* 						<img src="~/images/demo-images/news_8.jpg" data-at2x="images/demo-images/news_8@2x.jpg" width="370" alt="" /> *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post title *@
+			@* 					--> *@
+			@* 					<h4 class="h6"><a href="blog.html">Lorem ipsum dolor sit amet, consectetuer adipiscing </a></h4> *@
+			@* *@
+			@* 					<!-- *@
+			@* 						Post meta *@
+			@* 					--> *@
+			@* 					<div class="meta"> *@
+			@* 						by <a href="blog.html">Admin</a> <span class="separator">/</span> September 3, 2015 *@
+			@* 					</div> *@
+			@* *@
+			@* 					<!-- read more link --> *@
+			@* 					<a href="blog.html" class="read-more"></a> *@
+			@* *@
+			@* 				</div> *@
+			@* *@
+			@* 			</div> *@
+			@* 		</div> *@
+			@* 		<!-- Slider pagination --> *@
+			@* 		<div class="swiper-pagination"></div> *@
+			@* 	</div> *@
+			@* *@
+			@* </div> *@
+
+			<!--
+				Our Clients section
+			-->
+			<div class="section" id="clients">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<h2 class="h1 wow zoomInDown">What Our Clients Says About Us</h2>
+
+							<div class="testimonials-carousel owl-carousel">
+
+								<!--
+									Testimonial item
+								-->
+								<div class="item">
+									<div class="text">
+										<p>Prolink very active and supportive people, definitely we will keep our partnership.</p>
+									</div>
+									<div class="author">
+										Britney Simpson, Company Inc.
+									</div>
+								</div>
+
+								<!--
+									Testimonial item
+								-->
+								<div class="item">
+									<div class="text">
+										<p>Prolink very active and supportive people, definitely we will keep our partnership.</p>
+									</div>
+									<div class="author">
+										John Doe, Company Inc.
+									</div>
+								</div>
+
+								<!--
+									Testimonial item
+								-->
+								<div class="item">
+									<div class="text">
+										<p>Prolink very active and supportive people, definitely we will keep our partnership.</p>
+									</div>
+									<div class="author">
+										Lisa Simpson, Company Inc.
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="container testimonials-logos">
+					<div class="row">
+						<div class="col-md-3">
+							<img src="~/images/demo-images/logo_1.png" data-at2x="images/demo-images/logo_1@2x.png" width="210" alt="" />
+						</div>
+						<div class="col-md-3">
+							<img src="~/images/demo-images/logo_2.png" data-at2x="images/demo-images/logo_2@2x.png" width="210" alt="" />
+						</div>
+						<div class="col-md-3">
+							<img src="~/images/demo-images/logo_3.png" data-at2x="images/demo-images/logo_3@2x.png" width="210" alt="" />
+						</div>
+						<div class="col-md-3">
+							<img src="~/images/demo-images/logo_4.png" data-at2x="images/demo-images/logo_4@2x.png" width="210" alt="" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!--
+				Pricing tables section
+			-->
+			@* <div class="section" id="pricing"> *@
+			@* *@
+			@* 	<div class="container"> *@
+			@* 		<div class="row"> *@
+			@* 			<div class="col-md-8 col-md-offset-2"> *@
+			@* *@
+			@* 				<h2 class="h1 wow zoomInDown">Our Pricing Plans</h2> *@
+			@* *@
+			@* 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p> *@
+			@* *@
+			@* 			</div> *@
+			@* 		</div> *@
+			@* 	</div> *@
+			@* *@
+			@* 	<!-- *@
+			@* 		Pricing tables *@
+			@* 	--> *@
+			@* 	<div class="container pricing-table style-image"> *@
+			@* 		<div class="row"> *@
+			@* 			<div class="col-md-12"> *@
+			@* *@
+			@* 				<ul class="pricing-table"> *@
+			@* 					<li class="table-column first"> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan thumbnail and price *@
+			@* 						--> *@
+			@* 						<div class="table-row thumbnail"> *@
+			@* *@
+			@* 							<img src="~/images/demo-images/pricing_table_1.jpg" data-at2x="images/demo-images/pricing_table_1@2x.jpg" width="300" alt="" /> *@
+			@* *@
+			@* 							<div class="thumb-text"> *@
+			@* 								<h4>Personal</h4> *@
+			@* 								<div class="price">From <span>$39</span> per month</div> *@
+			@* 							</div> *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan description *@
+			@* 						--> *@
+			@* 						<div class="table-row description"> *@
+			@* 							Lorem ipsum dolor sit amet, consectetuer adipiscing. *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan features *@
+			@* 						--> *@
+			@* 						<div class="table-row features"> *@
+			@* *@
+			@* 							<ul> *@
+			@* 								<li class="check">Consectetuer adipiscing elit</li> *@
+			@* 								<li class="cross">Sed diam nonummy nibh</li> *@
+			@* 								<li class="cross">Euismod tincidunt</li> *@
+			@* 								<li class="cross">Laoreet dolore magna</li> *@
+			@* 							</ul> *@
+			@* *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Buy button *@
+			@* 						--> *@
+			@* 						<div class="table-row table-button"> *@
+			@* 							<a href="javascript:;" class="button blue inverted">Get Started Now</a> *@
+			@* 						</div> *@
+			@* *@
+			@* 					</li> *@
+			@* 					<li class="table-column"> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan thumbnail and price *@
+			@* 						--> *@
+			@* 						<div class="table-row thumbnail"> *@
+			@* *@
+			@* 							<img src="~/images/demo-images/pricing_table_2.jpg" data-at2x="images/demo-images/pricing_table_2@2x.jpg" width="300" alt="" /> *@
+			@* *@
+			@* 							<div class="thumb-text"> *@
+			@* 								<h4>Corporate</h4> *@
+			@* 								<div class="price">From <span>$99</span> per month</div> *@
+			@* 							</div> *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan description *@
+			@* 						--> *@
+			@* 						<div class="table-row description"> *@
+			@* 							Lorem ipsum dolor sit amet, consectetuer adipiscing. *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan features *@
+			@* 						--> *@
+			@* 						<div class="table-row features"> *@
+			@* *@
+			@* 							<ul> *@
+			@* 								<li class="check">Consectetuer adipiscing elit</li> *@
+			@* 								<li class="check">Sed diam nonummy nibh</li> *@
+			@* 								<li class="cross">Euismod tincidunt</li> *@
+			@* 								<li class="cross">Laoreet dolore magna</li> *@
+			@* 							</ul> *@
+			@* *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Buy button *@
+			@* 						--> *@
+			@* 						<div class="table-row table-button"> *@
+			@* 							<a href="javascript:;" class="button blue inverted">Get Started Now</a> *@
+			@* 						</div> *@
+			@* *@
+			@* 					</li> *@
+			@* 					<li class="table-column featured"> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan thumbnail and price *@
+			@* 						--> *@
+			@* 						<div class="table-row thumbnail"> *@
+			@* *@
+			@* 							<img src="~/images/demo-images/pricing_table_3.jpg" data-at2x="images/demo-images/pricing_table_3@2x.jpg" width="300" alt="" /> *@
+			@* *@
+			@* 							<div class="thumb-text"> *@
+			@* 								<h4>Unlimited</h4> *@
+			@* 								<div class="price">From <span>$200</span> per month</div> *@
+			@* 							</div> *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan description *@
+			@* 						--> *@
+			@* 						<div class="table-row description"> *@
+			@* 							Lorem ipsum dolor sit amet, consectetuer adipiscing. *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan features *@
+			@* 						--> *@
+			@* 						<div class="table-row features"> *@
+			@* *@
+			@* 							<ul> *@
+			@* 								<li class="check">Consectetuer adipiscing elit</li> *@
+			@* 								<li class="check">Sed diam nonummy nibh</li> *@
+			@* 								<li class="check">Euismod tincidunt</li> *@
+			@* 								<li class="check">Laoreet dolore magna</li> *@
+			@* 							</ul> *@
+			@* *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Buy button *@
+			@* 						--> *@
+			@* 						<div class="table-row table-button"> *@
+			@* 							<a href="javascript:;" class="button green inverted">Get Started Now</a> *@
+			@* 						</div> *@
+			@* *@
+			@* 					</li> *@
+			@* 					<li class="table-column last"> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan thumbnail and price *@
+			@* 						--> *@
+			@* 						<div class="table-row thumbnail"> *@
+			@* *@
+			@* 							<img src="~/images/demo-images/pricing_table_4.jpg" data-at2x="images/demo-images/pricing_table_4@2x.jpg" width="300" alt="" /> *@
+			@* *@
+			@* 							<div class="thumb-text"> *@
+			@* 								<h4>Business</h4> *@
+			@* 								<div class="price">From <span>$169</span> per month</div> *@
+			@* 							</div> *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan description *@
+			@* 						--> *@
+			@* 						<div class="table-row description"> *@
+			@* 							Lorem ipsum dolor sit amet, consectetuer adipiscing. *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Plan features *@
+			@* 						--> *@
+			@* 						<div class="table-row features"> *@
+			@* *@
+			@* 							<ul> *@
+			@* 								<li class="check">Consectetuer adipiscing elit</li> *@
+			@* 								<li class="check">Sed diam nonummy nibh</li> *@
+			@* 								<li class="check">Euismod tincidunt</li> *@
+			@* 								<li class="cross">Laoreet dolore magna</li> *@
+			@* 							</ul> *@
+			@* *@
+			@* 						</div> *@
+			@* *@
+			@* 						<!-- *@
+			@* 							Buy button *@
+			@* 						--> *@
+			@* 						<div class="table-row table-button"> *@
+			@* 							<a href="javascript:;" class="button blue inverted">Get Started Now</a> *@
+			@* 						</div> *@
+			@* *@
+			@* 					</li> *@
+			@* 				</ul> *@
+			@* *@
+			@* 			</div> *@
+			@* 		</div> *@
+			@* 	</div> *@
+			@* *@
+			@* </div> *@
+
+			<!--
+				Contacts section
+			-->
+			<div class="section" id="contact">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<!--
+								Contact section header
+							-->
+							<div class="row">
+								<div class="col-md-6">
+
+									<h2 class="h1 wow zoomInDown">Get In Touch</h2>
+
+									@* <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. </p> *@
+
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6">
+
+									<!--
+										Contact form block
+									-->
+									<form action="javascript:;" id="contact-form" method="post">
+
+										<div class="row">
+
+											<div class="col-md-6">
+												<input type="text" id="input-name" name="name" placeholder="Your Name" />
+											</div>
+
+											<div class="col-md-6">
+												<input type="email" id="input-email" name="email" placeholder="Email" />
+											</div>
+
+										</div>
+
+										<div class="row">
+
+											<div class="col-md-6">
+												<input type="text" id="input-phone" name="phone" placeholder="Phone" />
+											</div>
+
+											<div class="col-md-6">
+												<input type="text" id="input-subject" name="subject" placeholder="Subject" />
+											</div>
+
+										</div>
+
+										<div class="row">
+
+											<div class="col-md-12">
+												<textarea name="message" id="input-message" placeholder="Your Message"></textarea>
+											</div>
+
+										</div>
+
+										<div class="row">
+
+											<div class="col-md-12">
+												<button type="submit" class="button green">Send Your Message</button>
+											</div>
+
+										</div>
+
+									</form>
+
+								</div>
+								<div class="col-md-5 col-md-offset-1">
+
+									<!--
+										Contact information block
+									-->
+									<div class="contact-information">
+
+										<!--
+											Address
+										-->
+										<div class="item address">
+
+											<p style="margin-bottom:0px">51 El Nozha St Area 1, district 3<br />El Sheikh Zaid, 6th October<br />Egypt. Zip 12311</p>
+
+										</div>
+
+										<!--
+											Phones and Fax
+										-->
+										<div class="item phones">
+
+											<p>(+202) 38511007 - Central Office<br />(+202) 38500470 - Fax<br />
+												</p>
+
+										</div>
+
+										<!--
+											Email
+										-->
+										<div class="item email">
+
+											<p>
+												@* <a href="mailto:support@sitename.com">support@sitename.com</a>*@<br />
+												<a href="mailto:Info@ProLinkEgypt.Net">Info@ProLinkEgypt.Net</a>
+											</p>
+
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!--
+	Footer
+	-->
+	<footer id="footer">
+
+		<div id="footer-widgets" class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+
+					<a href="" class="footer-logo"><img src="~/images/low 72-06.png" data-at2x="images/low 72-05.png"  alt="ProLink - Advanced Technology Solutions" /></a>
+
+					@* <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p> *@
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+
+					@* <form class="subscribe-form" action="javascript:;" method="post"> *@
+					@* 	<input type="email" placeholder="Your Email Address..." /> *@
+					@* 	<input type="submit" /> *@
+					@* </form> *@
+
+					<div class="social-icons">
+						<a href="http://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="http://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="http://plus.google.com" target="_blank"><i class="fa fa-google-plus"></i></a>
+						<a href="http://pinterest.com" target="_blank"><i class="fa fa-pinterest-p"></i></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="bottom-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<p>&copy;2022 <a href="">ProLink</a></p>
+						@*<p>Designed by <a href="http://themeforest.net/user/themefire/?ref=wplab">ThemeFire</a> / Developed by <a href="http://themeforest.net/user/wplab/?ref=wplab">WPlab.Pro</a></p>
+						<p>Only for <a href="http://themeforest.net/user/wplab/portfolio/?ref=wplab">Envato Market</a></p>*@
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	@*</div>*@
+
+	<!--
+		Theme's JavaScript
+		It is located at the bottom of the page to increase site's loading speed
+	-->
+	<!-- JQuery can be loaded from CDN, change SRC attribute into "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" -->
+	@* <script src="~/js/libs/jquery.min.js"></script> *@
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!--
+		Here we load all JS libs, packed into one single file to increase loading speed
+		in case you need to load libraries one-by one or you need to remove one of them,
+		see /js/libs/directory/, it contains all JS libs, used by theme
+	-->
+	
+@*	//<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	//<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+	<script src="~/js/all_in_one_libs.min.js"></script>
+	<script src="~/js/libs/jquery.dlmenu.js"></script>
+	<script src="~/js/front.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
